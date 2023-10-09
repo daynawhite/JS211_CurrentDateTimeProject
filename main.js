@@ -15,11 +15,15 @@ const displayDate = () => {
  
 
 // Write a JavaScript program to convert a number to a string.
-
+// let num = 5
+// let text = num.toString()
+// console.log(text)
+// console.log(typeof text)
 
 
 // Write a JavaScript program to convert a string to the number.
-
+let nbr = Number('765')
+console.log(nbr)
 
 
 // Write a JavaScript program that takes in different datatypes and prints out whether they are a:
@@ -29,6 +33,8 @@ const displayDate = () => {
   // * Number
   // * NaN
   // * String
+
+  
   
 
   
