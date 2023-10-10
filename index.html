@@ -22,24 +22,28 @@
     </section>
     <section class="calculation">
       <h2>Choose two numbers to calculate:</h2>
-      <form class="calculate">
+      <form class="calculate" id="formTwo">
         <label for="first-number">First Number:</label>
-        <input type="number" id="first-number" name="first-number" placeholder="type the first number" value="" onkeyup="saveFirstNumber(this.value)">
+        <input type="number" id="first-number" name="first-number" placeholder="type the first number" value="">
         <span>
           <label for="second-number">Second Number:</label>
-          <input type="number" id="second-Number" name="second-Number" placeholder="type the second number" value="" onkeyup="saveSecondNumber(this.value)">
+          <input type="number" id="second-Number" name="second-Number" placeholder="type the second number" value="">
+          <button type="submit">Submit</button>
+          <div id="display-sum"></div>
         </span>
       </form>
     </section>  
     <section class="truthyFalsey">
       <h2>Compare two items for their truthiness or falsiness:</h2>
-      <form class="trueFalseTest">
+      <form class="trueFalseTest" id="formThree">
         <label for="first-item">First Item</label>
-        <input type="string" id="first-item" name="first-item" placeholder="type the first item" value="" onkeyup="saveFirstItem(this)">
+        <input type="string" id="first-item" name="first-item" placeholder="type the first item" value="">
         <span>
-          <label for="second-item">First Item</label>
-          <input type="string" id="second-item" name="second-item" placeholder="type the second-item" value="" onkeyup="saveSecondItem(this)">
+          <label for="second-item">Second Item</label>
+          <input type="string" id="second-item" name="second-item" placeholder="type the second-item" value="">
+          <button type="submit">Submit</button>
         </span>
+        <div id="display-TF-results"></div>
       </form>
     </section>
     <script src="main.js" defer></script>

@@ -15,15 +15,15 @@ const displayDate = () => {
  
 
 // Write a JavaScript program to convert a number to a string.
-// let num = 5
-// let text = num.toString()
-// console.log(text)
-// console.log(typeof text)
+let num = 5
+let text = num.toString()
+console.log(text)
+console.log(typeof text)
 
 
 // Write a JavaScript program to convert a string to the number.
-// let nbr = Number('765')
-// console.log(nbr)
+let nbr = Number('765')
+console.log(nbr)
 
 
 // Write a JavaScript program that takes in different datatypes and prints out whether they are a:
@@ -33,96 +33,107 @@ const displayDate = () => {
   // * Number
   // * NaN
   // * String
-
-
-
-let itemInput
+let itemIDResult = ""
 const formOne = document.querySelector('#formOne')
 const formOneInput = document.querySelector('#dataItem')
 
-formOneInput.addEventListener("submit", function(event){
-event.preventDefault()
-console.log(formOneInput.value)
-})
+formOne.addEventListener("submit", function(event){
+  event.preventDefault()
+  console.log(formOneInput.value)
+  itemID(formOneInput.value)
+ 
+  }
+  )
 
-// const saveItem = (item) => {
-//   itemInput = item.value
-//   console.log(itemInput)
-// }
+function itemID(valueX) {
+if (valueX === 'true' || valueX === 'false') {
+  itemIDResult = "Boolean";
+  console.log("Boolean")
+} else if (valueX === 'null') {
+  itemIDResult ="Null";
+  console.log("Null") 
+} else if (!valueX.length) {
+  itemIDResult ="Undefined";
+  console.log("Undefined")
+} else if (!isNaN(Number(valueX))) {
+  itemIDResult ="Number";
+  console.log("Number")
+} else {itemIDResult ="String";
+  console.log('String')};
 
-// function itemID(valueX) {
-// if (valueX === 'true' || valueX === 'false') {
-//   console.log("Boolean")
-// } else if (valueX === 'null') {
-//   console.log("Null") 
-// } else if (!valueX.length) {
-//  console.log("Undefined")
-// }else if (!isNaN(Number(valueX))) {
-//   console.log("Number")
-// } else if (isNaN(Number(valueX))) {
-//   console.log("NaN")
-// } else console.log('String')
-// }
-
-// itemID(itemInput)
-
-// function getInputType(value) {
-//   console.log(value)
-//   if (value === "")
-//       {return "";
-//     console.log();}
-//   else if(value === 'true' || value === "false")
-//       {return "boolean";
-//       console.log(value);}
-//   else if(!isNaN(Number(value)))
-//       return "number";
-//   else
-//       return typeof value;
-// }
-
-
-// getInputType(true)
-
-
-// let x = 7
-// console.log(typeof x)
+document.getElementById("dataTypeResult").innerHTML = "The data type is: " + itemIDResult;
+}
 
   
 // Write a JavaScript program that adds 2 numbers together.
 
+const formTwo = document.querySelector('#formTwo')
+const firstNum = document.querySelector('#first-number')
+const secondNum = document.querySelector('#second-Number')
+
+formTwo.addEventListener("submit", function(event){
+  event.preventDefault()
+  console.log(firstNum.value)
+  console.log(secondNum.value)
+  add(firstNum.value,secondNum.value)
+})
+
+function add(n1,n2) {
+  const num1 = parseInt(n1)
+  const num2 = parseInt(n2)
+  const sum = num1 + num2
+  document.getElementById("display-sum").innerHTML = "The sum is: " + sum;
+  console.log(sum)
+}
 
 
 // Write a JavaScript program that runs only when 2 things are true.
+const formThree = document.querySelector('#formThree')
+const firstItem = document.querySelector('#first-item')
+const secondItem = document.querySelector('#second-item')
 
-// const firstItem = (x) => {
-//   if ((x === 'undefined')
-//       || (x === '')
-//       || (x === 'false')
-//       || (x === '0')
-//       || (x === 'zero')
-//       || (x === 'null')){
-//     return false;
-//   // console.log(`${x} is a falsy value.`);
-//   }
-// //   else {
-// //   return true;
+formThree.addEventListener("submit", function(event){
+  event.preventDefault();
+  if (truthyFalsyTest(firstItem.value) && truthyFalsyTest(secondItem.value)){
+    console.log("both are truthy")
+    document.getElementById("display-TF-results").innerHTML = "Both items are truthy."
+  }
+  else if (!truthyFalsyTest(firstItem.value) && !truthyFalsyTest(secondItem.value)){
+    console.log("both are falsy")
+    document.getElementById("display-TF-results").innerHTML = "Both items are falsy."
+  }
+  else {console.log('They are different')
+  areTheyDifferent(firstItem.value,secondItem.value)
+  document.getElementById("display-TF-results").innerHTML = "One is truthy and one is falsy."}
+})
 
-// // }
 
-// console.log(dType('undefined'));
+function truthyFalsyTest(x) {
+  if ((x === 'undefined')
+      || (!x.length)
+      || (x === 'false')
+      || (x === '0')
+      || (x === 'null')){
+    return false
+  }
+   else return true
+ }
 
 
 
 // Write a JavaScript program that runs when 1 of 2 things are true.
+function areTheyDifferent(x) {
+if ((truthyFalsyTest(firstItem.value) && !truthyFalsyTest(secondItem.value)) || (!truthyFalsyTest(firstItem.value) && truthyFalsyTest(secondItem.value)))
+  console.log("One is truthy and one is falsy")
+}
 
-
-// const compareItems() {
-//   if firstItem() && secondItem()
-// }
 
 
 
 // Write a JavaScript program that runs when both things are not true.  
+
+if (!truthyFalsyTest(firstItem.value) && !truthyFalsyTest(secondItem.value)){
+  console.log("both are falsy")}
 
 // ***************************
 //         PART TWO
