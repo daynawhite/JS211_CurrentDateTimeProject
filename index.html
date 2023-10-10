@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <script src="main.js" defer></script>
   </head>
   <body>
     <h1>Hello World!</h1>
@@ -14,9 +13,9 @@
     <br/>
     <section class="data-type">
       <h2>Enter a data item to find out its data type:</h2>
-      <form class="datatypes">
+      <form class="datatypes" id="formOne" >
         <label for="dataItem">Data Item:</label>
-        <input type="string" id="dataItem" name="dataItem" placeholder="Enter data item here" onkeyup="saveDataItem(this)">
+        <input type="string" id="dataItem" name="dataItem" placeholder="Enter data item here">
         <button type="submit">Submit</button>
         <div id="dataTypeResult"></div>
       </form>
@@ -25,7 +24,7 @@
       <h2>Choose two numbers to calculate:</h2>
       <form class="calculate">
         <label for="first-number">First Number:</label>
-        <input type="number" id="first-Number" name="first-Number" placeholder="type the first number" value="" onkeyup="saveFirstNumber(this.value)">
+        <input type="number" id="first-number" name="first-number" placeholder="type the first number" value="" onkeyup="saveFirstNumber(this.value)">
         <span>
           <label for="second-number">Second Number:</label>
           <input type="number" id="second-Number" name="second-Number" placeholder="type the second number" value="" onkeyup="saveSecondNumber(this.value)">
@@ -43,5 +42,7 @@
         </span>
       </form>
     </section>
+    <script src="main.js" defer></script>
+
   </body>
 </html>
